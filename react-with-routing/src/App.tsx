@@ -4,7 +4,6 @@ function App() {
   console.log('location', window.location)
   return (
     <>
-
       <BrowserRouter>
         <nav>
           <ul>
