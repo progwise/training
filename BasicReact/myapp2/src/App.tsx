@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { CountDisplay } from './countDisplay';
+import { CountDisplayEven, CountDisplayOdd } from './countDisplay';
 
 
 function App() {
@@ -22,7 +22,11 @@ function App() {
   return (
     <div className="App">
      <button onClick={handleCountClick}>Click me</button>
-     <CountDisplay countForDisplay={count}></CountDisplay>
+     { count % 2
+      ? <CountDisplayOdd countForDisplay={count}></CountDisplayOdd>
+      : <CountDisplayEven countForDisplay={count}></CountDisplayEven>
+     }
+     
      <button onClick={handleResetClick}>Reset</button>
     </div>
   );
